@@ -1,0 +1,458 @@
+/* ===================================== */
+/* 0. CSS Reset & Base Styles           */
+/* ===================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Color Palette */
+    --primary-text-color: #333; /* Dark grey for main text */
+    --secondary-text-color: #666; /* Lighter grey for secondary text */
+    --background-light: #f8f8f8; /* Light background for sections */
+    --background-dark: #eee;    /* Slightly darker background for contrast */
+    --accent-color: #007bff;   /* A vibrant blue for accents/buttons */
+    --accent-hover: #0056b3;   /* Darker blue for hover states */
+    --border-color: #ddd;      /* Light grey for subtle borders */
+    --white: #fff;             /* Pure white */
+
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 2rem;     /* 32px */
+    --spacing-lg: 4rem;     /* 64px */
+    --spacing-xl: 6rem;     /* 96px */
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--primary-text-color);
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased; /* Better font rendering */
+    -moz-osx-font-smoothing: grayscale; /* Better font rendering */
+}
+
+/* Global Container for content width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm); /* Padding on sides for smaller screens */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--primary-text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8rem; } /* For main logo/hero */
+h2 { font-size: 2.2rem; margin-bottom: var(--spacing-md); } /* Section titles */
+h3 { font-size: 1.6rem; } /* Project titles */
+h4 { font-size: 1.2rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    text-decoration: none; /* Remove underline on hover for buttons */
+}
+
+
+/* ===================================== */
+/* 1. Header & Navigation                */
+/* ===================================== */
+.main-header {
+    background-color: var(--white);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky; /* Makes header stick to top */
+    top: 0;
+    z-index: 1000; /* Ensures it's above other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.main-header .logo a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md); /* Space between nav items */
+}
+
+.main-nav a {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative; /* For underline effect */
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Underline effect on hover */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    bottom: -5px; /* Position below text */
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* ===================================== */
+/* 2. Hero Section                       */
+/* ===================================== */
+.hero-section {
+    background: linear-gradient(to right, #ece9e6, #ffffff); /* Subtle gradient */
+    text-align: center;
+    padding: var(--spacing-xl) 0; /* Generous vertical padding */
+    display: flex; /* For centering content */
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh; /* Takes up most of the viewport height */
+    position: relative;
+    overflow: hidden; /* Hide any overflow from background patterns if added */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 123, 255, 0.05); /* Light accent shape */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    right: -70px;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(0, 123, 255, 0.08); /* Another light accent shape */
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    transform: rotate(20deg);
+    z-index: 0;
+}
+
+
+.hero-section .container {
+    position: relative; /* Bring content above pseudo-elements */
+    z-index: 1;
+}
+
+.hero-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-text-color);
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.4rem;
+    color: var(--secondary-text-color);
+    margin-bottom: var(--spacing-md);
+    font-weight: 400;
+}
+
+
+/* ===================================== */
+/* 3. Section Styles (General)           */
+/* ===================================== */
+section {
+    padding: var(--spacing-xl) 0; /* Consistent vertical padding for all sections */
+    text-align: center;
+}
+
+section:nth-of-type(odd) { /* Alternate background for readability */
+    background-color: var(--background-light);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--white);
+}
+
+
+/* ===================================== */
+/* 4. About Section                      */
+/* ===================================== */
+.about-section .about-content {
+    display: flex;
+    flex-direction: column; /* Stack on small screens */
+    align-items: center;
+    gap: var(--spacing-md);
+    max-width: 900px; /* Constrain width for paragraphs */
+    margin: 0 auto;
+    text-align: left; /* Align text within about content */
+}
+
+.about-section .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Make it round */
+    object-fit: cover; /* Ensure image covers the area */
+    border: 5px solid var(--white); /* White border around picture */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+    margin-bottom: var(--spacing-sm); /* Space below pic on small screens */
+}
+
+
+/* ===================================== */
+/* 5. Portfolio Section                  */
+/* ===================================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: var(--spacing-md);
+    padding-top: var(--spacing-md);
+}
+
+.portfolio-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden; /* Ensure image corners are rounded */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Stack image and text */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop and cover without distortion */
+    display: block; /* Remove extra space below image */
+    transition: transform 0.3s ease; /* Smooth zoom on hover */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.03); /* Subtle zoom on image hover */
+}
+
+.portfolio-item h3 {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    padding: 0 var(--spacing-sm);
+    color: var(--primary-text-color);
+}
+
+.portfolio-item p {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    padding: 0 var(--spacing-sm) var(--spacing-sm); /* Padding bottom for text */
+    margin-bottom: 0;
+}
+
+
+/* ===================================== */
+/* 6. Contact Section                    */
+/* ===================================== */
+.contact-section .contact-intro {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-info p {
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-info a {
+    font-weight: 600;
+}
+
+/* Styling for future form elements */
+/*
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: var(--spacing-sm);
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--primary-text-color);
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.contact-form .btn {
+    align-self: flex-start;
+    margin-top: var(--spacing-sm);
+}
+*/
+
+
+/* ===================================== */
+/* 7. Footer                             */
+/* ===================================== */
+.main-footer {
+    background-color: var(--primary-text-color); /* Dark footer */
+    color: var(--white);
+    padding: var(--spacing-sm) 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* ===================================== */
+/* 8. Media Queries (Responsiveness)     */
+/* ===================================== */
+
+/* Larger screens (e.g., tablets in landscape, small desktops) */
+@media (min-width: 768px) {
+    .main-header .logo {
+        font-size: 2.2rem;
+    }
+
+    .hero-section h2 {
+        font-size: 4rem;
+    }
+
+    .hero-section p {
+        font-size: 1.6rem;
+    }
+
+    .about-section .about-content {
+        flex-direction: row; /* Side-by-side on larger screens */
+        text-align: left;
+    }
+
+    .about-section .profile-pic {
+        margin-right: var(--spacing-md); /* Space between image and text */
+        margin-bottom: 0;
+        flex-shrink: 0; /* Prevent picture from shrinking */
+    }
+}
+
+/* Desktops and larger */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.8rem; }
+
+    .hero-section h2 {
+        font-size: 5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.8rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger min column size */
+    }
+}
+
+/* Even larger desktops */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px; /* Allow wider content area */
+    }
+}
