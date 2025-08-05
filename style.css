@@ -29,21 +29,15 @@
     --spacing-lg: 4rem;     /* 64px */
     --spacing-xl: 6rem;     /* 96px */
 }
-.color-red{
-    color: red;
-}
+ 
 .color-white{
     color: white;
 }
-.color-blue{
-    color: skyblue;
-}
+ 
 .color-green{
-    color: greenyellow;
+    color:#00A300;
 }
-.color-orange{
-    color: orange;
-}
+ 
 
 html {
     scroll-behavior: smooth; /* Smooth scrolling for anchor links */
@@ -63,7 +57,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-sm); /* Padding on sides for smaller screens */
-}
+ }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -121,7 +115,7 @@ a:hover {
 /* 1. Header & Navigation                */
 /* ===================================== */
 .main-header {
-    background-color: var(--white);
+    background-color:black;
     padding: var(--spacing-sm) 0;
     border-bottom: 1px solid var(--border-color);
     position: sticky; /* Makes header stick to top */
@@ -187,44 +181,51 @@ a:hover {
 /* 2. Hero Section                       */
 /* ===================================== */
 .hero-section {
-    background: linear-gradient(to right, #ece9e6, #ffffff); /* Subtle gradient */
+    background-image: url("media/bg1.png");
+    background-size:100%;
+    background-repeat:no-repeat;
+    /* background-position: center; */
+
     text-align: center;
-    padding: var(--spacing-xl) 0; /* Generous vertical padding */
+    padding: var(--spacing-xl) 0; 
+     /* Generous vertical padding */
+
     display: flex; /* For centering content */
     align-items: center;
     justify-content: center;
-    min-height: 70vh; /* Takes up most of the viewport height */
+    min-height: 85vh; /* Takes up most of the viewport height */
     position: relative;
     overflow: hidden; /* Hide any overflow from background patterns if added */
 }
+ 
 
-.hero-section::before {
+/* .hero-section::before {
     content: '';
     position: absolute;
     top: -50px;
     left: -50px;
     width: 200px;
     height: 200px;
-    background-color: rgba(0, 123, 255, 0.05); /* Light accent shape */
+    background-color: rgba(0, 123, 255, 0.05); /* Light accent shape 
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     transform: rotate(45deg);
     z-index: 0;
 }
+*/
 
-.hero-section::after {
+/* .hero-section::after {
     content: '';
     position: absolute;
     bottom: -70px;
     right: -70px;
     width: 250px;
     height: 250px;
-    background-color: rgba(0, 123, 255, 0.08); /* Another light accent shape */
+    background-color: rgba(0, 123, 255, 0.08); /* Another light accent shape 
     border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
     transform: rotate(20deg);
     z-index: 0;
-}
-
-
+ }  
+*/
 .hero-section .container {
     position: relative; /* Bring content above pseudo-elements */
     z-index: 1;
@@ -254,7 +255,7 @@ section {
 }
 
 section:nth-of-type(odd) { /* Alternate background for readability */
-    background-color: var(--background-light);
+    /* background-color: var(--background-light); */
 }
 
 section:nth-of-type(even) {
@@ -267,12 +268,16 @@ section:nth-of-type(even) {
 /* ===================================== */
 .about-section .about-content {
     display: flex;
+    /* background-color: ; */
     flex-direction: column; /* Stack on small screens */
     align-items: center;
     gap: var(--spacing-md);
     max-width: 900px; /* Constrain width for paragraphs */
     margin: 0 auto;
     text-align: left; /* Align text within about content */
+}
+#about {
+    background-color: black;
 }
 
 .about-section .profile-pic {
@@ -342,6 +347,9 @@ section:nth-of-type(even) {
 /* ===================================== */
 /* 6. Contact Section                    */
 /* ===================================== */
+#contact{
+    background-color: black;
+}
 .contact-section .contact-intro {
     font-size: 1.1rem;
     color: var(--secondary-text-color);
@@ -405,7 +413,7 @@ section:nth-of-type(even) {
 /* 7. Footer                             */
 /* ===================================== */
 .main-footer {
-    background-color: var(--primary-text-color); /* Dark footer */
+    background-color: black; /* Dark footer */
     color: var(--white);
     padding: var(--spacing-sm) 0;
     text-align: center;
