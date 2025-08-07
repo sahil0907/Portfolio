@@ -127,7 +127,7 @@ a:hover {
 .main-header .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:center
 }
 
 .main-header .logo {
@@ -136,7 +136,7 @@ a:hover {
 }
 
 .main-header .logo a {
-    color: var(--primary-text-color);
+    color: white;
     text-decoration: none;
 }
 
@@ -153,8 +153,9 @@ a:hover {
     font-size: 1rem;
     padding: 0.5rem 0;
     position: relative; /* For underline effect */
+    color:white;
 }
-
+ 
 .main-nav a:hover {
     color: var(--accent-color);
     text-decoration: none;
@@ -166,10 +167,10 @@ a:hover {
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: var(--accent-color);
+    background-color: greenyellow;
     bottom: -5px; /* Position below text */
     left: 0;
-    transition: width 0.3s ease;
+    transition: width 0.2s ease;
 }
 
 .main-nav a:hover::after {
