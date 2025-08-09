@@ -62,7 +62,7 @@ body {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--primary-text-color);
+    color: white;
     margin-bottom: var(--spacing-sm);
     line-height: 1.2;
 }
@@ -241,7 +241,7 @@ a:hover {
 }
 
 .hero-section p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--secondary-text-color);
     margin-bottom: var(--spacing-md);
     font-weight: 400;
@@ -252,7 +252,7 @@ a:hover {
 /* 3. Section Styles (General)           */
 /* ===================================== */
 section {
-    padding: var(--spacing-xl) 0; /* Consistent vertical padding for all sections */
+    padding:  30px; /* Consistent vertical padding for all sections */
     text-align: center;
 }
 
@@ -277,6 +277,8 @@ section:nth-of-type(even) {
     max-width: 900px; /* Constrain width for paragraphs */
     margin: 0 auto;
     text-align: left; /* Align text within about content */
+    font-size: larger;
+    color: white;
 }
 #about {
     background-color: black;
@@ -354,17 +356,20 @@ section:nth-of-type(even) {
 }
 .contact-section .contact-intro {
     font-size: 1.1rem;
-    color: var(--secondary-text-color);
+    color: white;
     margin-bottom: var(--spacing-md);
 }
 
 .contact-info {
     font-size: 1.1rem;
     margin-bottom: var(--spacing-md);
+
 }
 
 .contact-info p {
     margin-bottom: var(--spacing-xs);
+    color: white;
+
 }
 
 .contact-info a {
