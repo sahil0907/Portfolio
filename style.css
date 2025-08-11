@@ -186,8 +186,6 @@ a:hover {
     background-image: url("media/bg1.png");
     background-size:100%;
     background-repeat:no-repeat;
-    /* background-position: center; */
-
     text-align: center;
     padding: var(--spacing-xl) 0; 
      /* Generous vertical padding */
@@ -298,15 +296,20 @@ section:nth-of-type(even) {
 /* ===================================== */
 /* 5. Portfolio Section                  */
 /* ===================================== */
+.portfolio-section {
+background-color: black;
+}
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
     gap: var(--spacing-md);
     padding-top: var(--spacing-md);
+    background-color: black;
 }
 
 .portfolio-item {
-    background-color: var(--white);
+    background-color: whitesmoke;
     border-radius: 8px;
     overflow: hidden; /* Ensure image corners are rounded */
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
