@@ -250,7 +250,7 @@ a:hover {
 /* 3. Section Styles (General)           */
 /* ===================================== */
 section {
-    padding:  30px; /* Consistent vertical padding for all sections */
+    padding:  100px; /* Consistent vertical padding for all sections */
     text-align: center;
 }
 
@@ -277,6 +277,7 @@ section:nth-of-type(even) {
     text-align: left; /* Align text within about content */
     font-size: larger;
     color: white;
+    padding: 30px;
 }
 #about {
     background-color: black;
@@ -298,6 +299,7 @@ section:nth-of-type(even) {
 /* ===================================== */
 .portfolio-section {
 background-color: black;
+padding:100px; 
 }
 
 .portfolio-grid {
