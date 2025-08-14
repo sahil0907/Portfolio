@@ -281,6 +281,10 @@ section:nth-of-type(even) {
 }
 #about {
     background-color: black;
+    background-image: url("media/about.jpg");
+    background-size:80%;
+    background-repeat:space;
+    background-position: center;
 }
 
 .about-section .profile-pic {
