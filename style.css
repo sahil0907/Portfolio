@@ -268,7 +268,6 @@ section:nth-of-type(even) {
 /* ===================================== */
 .about-section .about-content {
     display: flex;
-    /* background-color: ; */
     flex-direction: column; /* Stack on small screens */
     align-items: center;
     gap: var(--spacing-md);
@@ -279,12 +278,14 @@ section:nth-of-type(even) {
     color: white;
     padding: 30px;
 }
-#about {
+.about-section  {
     background-color: black;
     background-image: url("media/about.jpg");
-    background-size:80%;
-    background-repeat:space;
-    background-position: center;
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position: center; 
+    
+    
 }
 
 .about-section .profile-pic {
